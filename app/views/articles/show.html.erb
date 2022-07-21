@@ -6,7 +6,7 @@
                                     turbo_method: :delete, turbo_confirm: "You sure?" }%> | <%= link_to "Back", root_path %><br>
   
 
-<%= render "comments/comments", article: @article %>
+<%= render "comments/comments", article: @article, comment: @comment %>
 
 <h3>Add a comment</h3>
 <%= render "comments/comments_form", article: @article %>
