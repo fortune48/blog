@@ -1,13 +1,20 @@
-<h3>Articles</h3>
 
-<ul>
+<br>
+<table class="table table-hover table-striped">
+  <thead class="table-dark text-center">
+    <tr>
+      <td ><h3>Articles</h3></td>
+    </tr>
+  </thead>
+  <tbody>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
-      <li>
-        <%= link_to article.title, article %><br><br>
-      </li>
+      <tr>
+        <td><%= link_to article.title, article %></td>
+      </tr>
     <% end %>
   <% end %>
-</ul>
+  </tbody>
+</table>
 
 <%= link_to "New Article", new_article_path %>

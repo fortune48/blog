@@ -1,12 +1,14 @@
+<br>
+<h4>Add a comment</h4>
 <%= form_with model: [ article, article.comments.build ] do |form| %>
   <p>
-    <%= form.label :commenter %>
-    <%= form.text_field :commenter %>
+    <% form.label :commenter %>
+    <%= form.text_field :commenter, class: "form-control", placeholder: "Your name" %>
   </p>
 
   <p>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+    <% form.label :body %>
+    <%= form.text_area :body, class: "form-control", placeholder: "Your name" %>
   </p>
 
   <p>
@@ -15,6 +17,6 @@
   </p>
 
   <p>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-dark"%>
   </p>
 <% end %>
