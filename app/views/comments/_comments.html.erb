@@ -1,19 +1,22 @@
-<h2>Comments</h2>
-<% article.comments.each do |comment| %>
-  <% unless comment.archived? %>
-    <p>
-      <strong>Commenter:</strong>
-      <%= comment.commenter %>
-    </p>
 
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
+<div class="card">
+  <div class="card-header">
+    Comments
+  </div>
+  <div class="card-body">
+    <% article.comments.each do |comment| %>
+      <% unless comment.archived? %>
+        <h5 class="card-title">
+          Commenter: <%= comment.commenter %>
+        </h5>
 
-    <p>
-      <%= link_to "delete comment", [comment.article, comment], data: 
-                  {turbo_method: :delete, turbo_confirm: "you sure?"} %>
-    </p><br>
-  <% end %>
-<% end %>
+        <p class="card-text">
+          Comment: <%= comment.body %>
+        </p>
+        <%= link_to "delete comment", [comment.article, comment], data: 
+          {turbo_method: :delete, turbo_confirm: "you sure?"}, class: "btn btn-danger" %>
+        <hr/>
+      <% end %>
+    <% end %>
+  </div>
+</div>
