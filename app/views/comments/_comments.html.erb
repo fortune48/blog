@@ -1,7 +1,7 @@
 
 <div class="card">
-  <div class="card-header">
-    Comments
+  <div class="card-header text-center">
+    <strong>Comments</strong>
   </div>
   <div class="card-body">
     <% article.comments.each do |comment| %>
@@ -18,5 +18,9 @@
         <hr/>
       <% end %>
     <% end %>
+    <div class="d-flex justify-content-end">
+      <div  style="width: 50%;"><%= render "comments/comments_form", article: @article %>
+      </div>
+    </div>
   </div>
 </div>
