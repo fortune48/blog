@@ -1,16 +1,35 @@
 
-<div class="card bg-secondary" style="width: 35rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= @article.title %></h5>
-    <h6 class="card-subtitle mb-2"><%= @article.body %></h6>
-    <%= link_to "Edit Article", edit_article_path(@article), class: "btn btn-primary" %> | 
-    <%= link_to "Delete Article", article_path(@article), data: {
-                                    turbo_method: :delete, turbo_confirm: "You sure?" }, class: "btn btn-danger" %> | 
-    <%= link_to "Back", root_path, class: "btn btn-dark" %><br>
-    <hr/>
-    
-    <%= render "comments/comments", article: @article, comment: @comment %>
 
-    <%= render "comments/comments_form", article: @article %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col bg-danger bg-opacity-25">
+    </div>
+    <div class="col-6 border border-2">   
+      <div class="card bg-secondary bg-opacity-25" style="width: 100%;">
+        <div class="card-body">
+          <div class="container">
+            <div class="row row-cols-1">
+              <div class="col text-center" style="height: auto;>
+                <h1 class="card-title"><%= @article.title %></h1><br><br>
+                <h3 class="card-subtitle mb-2"><%= @article.body %></h3><br><br>
+                <%= link_to "Edit Article", edit_article_path(@article), class: "btn btn-primary" %> | 
+                <%= link_to "Delete Article", article_path(@article), data: {
+                                                turbo_method: :delete, turbo_confirm: "You sure?" }, class: "btn btn-danger" %> | 
+                <%= link_to "Back", root_path, class: "btn btn-dark" %><br>
+                <hr/>
+              </div>
+              <div class="col">
+              
+                <%= render "comments/comments", article: @article, comment: @comment %>
+              
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="col bg-primary bg-opacity-25">
+    </div>
   </div>
 </div>
